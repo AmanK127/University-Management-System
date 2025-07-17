@@ -41,10 +41,12 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem facultyDetails = new JMenuItem("View Faculty Details");
         facultyDetails.setBackground(Color.WHITE);
+        facultyDetails.addActionListener(this);
         details.add(facultyDetails);
 
         JMenuItem studentDetails = new JMenuItem("View Student Details");
         studentDetails.setBackground(Color.WHITE);
+        studentDetails.addActionListener(this);
         details.add(studentDetails);
 
         //Leave
@@ -54,10 +56,12 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem facultyLeave = new JMenuItem("Faculty Leave");
         facultyLeave.setBackground(Color.WHITE);
+        facultyLeave.addActionListener(this);
         leave.add(facultyLeave);
 
         JMenuItem studentLeave = new JMenuItem("Student Leave");
         studentLeave.setBackground(Color.WHITE);
+        studentLeave.addActionListener(this);
         leave.add(studentLeave);
 
         //Leave Details
@@ -67,10 +71,12 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem facultyLeaveDetails = new JMenuItem("Faculty Leave Details");
         facultyLeaveDetails.setBackground(Color.WHITE);
+        facultyLeaveDetails.addActionListener(this);
         leaveDetails.add(facultyLeaveDetails);
 
         JMenuItem studentLeaveDetails = new JMenuItem("Student Leave Details");
         studentLeaveDetails.setBackground(Color.WHITE);
+        studentLeaveDetails.addActionListener(this);
         leaveDetails.add(studentLeaveDetails);
 
         //Exams
@@ -86,7 +92,7 @@ public class Project extends JFrame implements ActionListener{
         examinationDetails.setBackground(Color.WHITE);
         exam.add(enterMarks);
 
-        //Upadate Inforemation
+        //Upadate Information
         JMenu updateInfo = new JMenu("Update Details");
         updateInfo.setForeground(Color.RED);
         mb.add(updateInfo);
@@ -165,6 +171,18 @@ public class Project extends JFrame implements ActionListener{
             new AddTeacher();
         }else if(msg.equals("New Student Information")){
             new AddStudent();
+        }else if(msg.equals("View Faculty Details")){
+            new TeacherDetails();
+        }else if(msg.equals("View Student Details")){
+            new TeacherLeaveDetails();
+        }else if(msg.equals("Faculty Leave")){
+            new TeacherLeave();
+        }else if(msg.equals("Student Leave")){
+            new StudentLeave();
+        }else if(msg.equals("Faculty Leave Details")){
+            new TeacherLeaveDetails();
+        }else if(msg.equals("Student Leave Details")){
+            new StudentLeaveDetails();
         }
     }
 
